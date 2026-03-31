@@ -1,0 +1,55 @@
+# Microsoft Teams Linux Configuration Guide
+
+## Introduction
+Microsoft Teams is a collaboration platform that is widely used for communication and teamwork. This guide will cover the necessary steps to configure Microsoft Teams on Linux, as well as common audio troubleshooting methods.
+
+## Installation
+1. **Download the .deb package** from the Microsoft website. 
+   ```bash
+   wget https://packages.microsoft.com/repos/ms-teams/pool/main/m/ms-teams/teams_1.5.00.26453_amd64.deb
+   ```
+2. **Install the package using dpkg**:
+   ```bash
+   sudo dpkg -i teams_1.5.00.26453_amd64.deb
+   ```
+3. **Fix any dependencies**:
+   ```bash
+   sudo apt-get install -f
+   ```
+4. **Launch Microsoft Teams**:
+   ```bash
+   teams
+   ```
+
+## Configuration
+- **Sign in** to your Microsoft account.
+- Customize your settings: 
+  1. Go to **Settings**.
+  2. Adjust your **Notifications**, **Devices**, and **Permissions** as needed.
+
+## Audio Troubleshooting
+### Common issues and solutions:
+1. **No Sound During Calls**:
+   - Check if the correct microphone and speakers are selected in the **Devices** settings.
+   - Ensure that your system audio is not muted and the volume is turned up.
+
+2. **Poor Audio Quality**:
+   - Check your internet connection. A stable and fast connection is essential for good audio quality.
+   - Close other applications that may be using bandwidth.
+
+3. **Microphone Not Working**:
+   - Verify that your microphone is connected and is not muted.
+   - In Linux, you can check input levels using `pactl list sources`.
+
+4. **Using PulseAudio**:
+   - Ensure that PulseAudio is installed and configured correctly.
+   - You can install PulseAudio with:
+   ```bash
+   sudo apt-get install pulseaudio
+   ```
+   - Check volume levels using `pavucontrol`, a graphical volume control.
+
+## Conclusion
+Following these guidelines should ensure a smooth installation and setup of Microsoft Teams on Linux, along with the resolution of common audio issues.
+
+For further assistance, please refer to the official Microsoft support documentation or community forums.
